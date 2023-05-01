@@ -111,6 +111,14 @@ alias kdf='k delete -f '
 export nk='-n kube-system'
 export n='-n important-ns' # set this as needed
 
+namespace using alias
+$ alias kubens='kubectl config set-context --current --namespace '
+$ alias kubectx='kubectl config use-context '
+
+// Usage
+$ kubens kube-system    //Switch to a different namespace
+$ kubectx docker        //Switch to separate context
+
 ## destroy things without waiting
 export now='--grace-period 0 --force'
 ```
